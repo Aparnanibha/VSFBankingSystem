@@ -29,3 +29,9 @@ Constraint "fk_AccNum_Tr" Foreign key(AccountNumber) references CustomerAcc (Acc
 alter table AddPayee alter column BeneficiaryAccountNumber numeric(12) not null
 
 Alter table AddPayee add primary key (BeneficiaryAccountNumber);
+
+alter table TransactionDetail add Amount money;
+
+alter table TransactionDetail add TransType varchar(20) 
+
+Alter table TransactionDetail  add check (TransType in('Credit','Debit'));
