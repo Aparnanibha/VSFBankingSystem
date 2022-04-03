@@ -25,3 +25,7 @@ create table TransactionDetail(TransactionId numeric(12), TransactionType varcha
 ToAccountNumber numeric(12), AccountNumber numeric(12) , Maturityinstruct varchar(40), 
 TransactionDate date, Primary key(TransactionId), 
 Constraint "fk_AccNum_Tr" Foreign key(AccountNumber) references CustomerAcc (AccountNumber));
+
+alter table AddPayee alter column BeneficiaryAccountNumber numeric(12) not null
+
+Alter table AddPayee add primary key (BeneficiaryAccountNumber);
